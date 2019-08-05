@@ -89,27 +89,27 @@
         				<li>
         					Region : {{ resultDetail.region }}
         				</li>
-        				<li>
-        					Top Level Domain : {{ resultDetail.topLevelDomain[0] }}
+        				<li v-for="dom in resultDetail.topLevelDomain" :key="dom">
+        					Top Level Domain : {{ dom }}
         				</li>
-        				<li>
-        					Time Zone : {{ resultDetail.timezones[0] }}
+        				<li v-for="time in resultDetail.timezones" :key="time">
+        					Time Zone : {{ time }}
         				</li>
         				<li>
         					Population : {{ resultDetail.population }}
         				</li>
         				<li>
         					Language : <ol>
-        									<li>
-        										Name : {{ resultDetail.languages[0].name }}
+        									<li v-for="lang in resultDetail.languages" :key="lang.name">
+        										Name : {{ lang.name }}
         									</li>
-        									<li>
-        										Native Name : {{ resultDetail.languages[0].name }}
+        									<li v-for="lang in resultDetail.languages" :key="lang.name">
+        										Native Name : {{ lang.nativeName }}
         									</li>
         								</ol>
         				</li>
-        				<li>
-        					Calling Codes : {{ resultDetail.callingCodes[0] }}
+        				<li v-for="code in resultDetail.callingCodes" :key="code">
+        					Calling Codes : {{ code }}
         				</li>
         			</ul>
         		</div>
@@ -172,7 +172,7 @@
 	    		axios.get(url)
 	    		    .then((response) => 
 	    		    {
-	    		    	console.log(response.data[0])
+	    		    	// console.log(response.data[0])
 			            this.resultDetail = response.data[0]
 	    		    })
 	    		    .catch((response) => 
