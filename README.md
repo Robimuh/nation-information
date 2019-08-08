@@ -19,5 +19,5 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
+## Notes
+> I just create this project as simple as I can, I do not use additional technology only Vue and Nuxt. If you want to see my other skills, please hire me :)
